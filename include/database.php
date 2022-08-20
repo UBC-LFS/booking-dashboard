@@ -2,7 +2,7 @@
 
 require 'conf/mysql.inc';
 
-function get-bookings() {
+function get_bookings() {
 
   // Create connection
   $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_database);

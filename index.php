@@ -15,7 +15,7 @@ include 'include/database.php';
 <body>
 
 <?php
-if (get-bookings()->num_rows > 0) {
+if (get_bookings()->num_rows > 0) {
 ?>
 
   <table class='table table-striped'>
