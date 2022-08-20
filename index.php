@@ -14,8 +14,8 @@ include 'include/database.php';
 </head>
 <body>
 
-<h1>LC Booking Dashboard
-  
+<h1>LC Booking Dashboard</h1>
+
 <?php
 if (get_bookings()->num_rows > 0) {
 ?>
