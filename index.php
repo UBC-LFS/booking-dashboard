@@ -43,10 +43,10 @@ foreach($query as $k => $v) {
 ?>
   
       <tr>
-      <td>$row['start_time']</td>
-      <td>$row['room_name']</td>
-      <td>$row['name']</td>
-      <td>$row['user_email']</td>
+      <td><?php echo $row['date_time']; ?></td>
+      <td><?php echo $row['room_name']; ?></td>
+      <td><?php echo $row['name']; ?></td>
+      <td><?php echo $row['user_email']; ?></td>
       </tr>
   
 <?php
