@@ -21,7 +21,9 @@ include 'include/queries.php'
 <?php
 foreach($query as $k => $v) {
   print "<h2>$k</h2>"; 
-  if (get_bookings($query["$k"])->num_rows > 0) {
+  $result = get_bookings($v);
+
+  if ($result->num_rows > 0) {
 ?>
   
     <table class='table table-striped'>
