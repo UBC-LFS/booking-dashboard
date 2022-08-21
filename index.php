@@ -1,5 +1,6 @@
 <?php
 include 'include/database.php';
+include 'include/queries.php'
 ?>
 
 <!DOCTYPE html>
@@ -16,43 +17,49 @@ include 'include/database.php';
 
 <h1>LC Booking Dashboard</h1>
 
+
 <?php
-if (get_bookings()->num_rows > 0) {
+foreach($query as $k => $v) {
+  print "<h2>$k</h2>"; 
+  if (get_bookings($v)->num_rows > 0) {
 ?>
-
-  <table class='table table-striped'>
-  <thead>
-  <tr>
-  <th scope='col'>Item</th>
-  <th scope='col'>Notes</th>
-  <th scope='col'>Email</th>
-  </tr>
-  </thead>
-  <tbody>
-
-<?php
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-?>
-
-    <tr>
-    <td>$row['room_name']</td>
-    <td>$row['name']</td>
-    <td>$row['user_email']</td>
-    </tr>
-
-<?php
-  }
-?>
-
-  </tbody>
-  </table>
-
-<?php
-} else {
   
-    echo "<p>There are no bookings today.";
-
+    <table class='table table-striped'>
+    <thead>
+    <tr>
+    <th scope='col'>Date/Time</th>
+    <th scope='col'>Item</th>
+    <th scope='col'>Notes</th>
+    <th scope='col'>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+  
+<?php
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+?>
+  
+      <tr>
+      <td>$row['start_time']</td>
+      <td>$row['room_name']</td>
+      <td>$row['name']</td>
+      <td>$row['user_email']</td>
+      </tr>
+  
+<?php
+    }
+?>
+  
+    </tbody>
+    </table>
+  
+<?php
+  } else {
+    
+      echo "<p>There are no bookings.";
+  
+  }
 }
 ?>
 
