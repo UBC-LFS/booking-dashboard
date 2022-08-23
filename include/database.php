@@ -2,10 +2,10 @@
 
 function get_bookings($query) {
 
-  require 'conf/mysql.inc';
+  require "../web/sites/lc/config.inc.php";
 
   // Create connection
-  $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
+  $conn = mysqli_connect($db_host, $db_login, $db_password, $db_database);
   
   // Check connection
   if (!$conn) {
