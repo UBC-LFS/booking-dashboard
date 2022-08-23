@@ -16,7 +16,9 @@ include 'include/queries.php'
   </head>
 <body>
 
-<div class=".container-fluid">
+<div class="row">
+<div class="col-md-8 offset-md-2">
+
 <h1>LC Booking Dashboard</h1>
 
 
@@ -67,6 +69,7 @@ foreach($query as $k => $v) {
 }
 ?>
 
+</div>
 </div>
 </body>
 </html>
