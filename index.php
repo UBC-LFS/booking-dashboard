@@ -34,6 +34,15 @@ foreach($query as $k => $v) {
     <thead>
     <tr>
     <th scope='col'>Date/Time</th>
+
+<?php
+    if ($k == "Checked Out") {
+?>
+      <th scope='col'>Return Date</th>
+<?php
+    };
+?>
+
     <th scope='col'>Item</th>
     <th scope='col'>Notes</th>
     <th scope='col'>Email</th>
@@ -48,6 +57,13 @@ foreach($query as $k => $v) {
   
       <tr>
       <td><?php echo $row['date_time']; ?></td>
+<?php
+    if ($k == "Checked Out") {
+?>
+      <td scope='col'><?php echo $row['check_in']; ?></td>
+<?php
+    };
+?>
       <td><?php echo $row['room_name']; ?></td>
       <td><?php echo $row['name']; ?></td>
       <td><?php echo $row['user_email']; ?></td>
