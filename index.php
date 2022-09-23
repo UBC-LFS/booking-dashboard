@@ -17,11 +17,17 @@ include 'include/queries.php'
   </head>
 <body>
 
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+        <img src="./images/ubc-logo-2018-crest-blue-rgb72.jpg" width="30" height="36">
+        Learning Centre - Booking Dashboard
+        </a>
+    </div>
+</nav>
+
 <div class="row">
 <div class="col-md-8 offset-md-2">
-
-<h1>LC Booking Dashboard</h1>
-
 
 <?php
 foreach($query as $k => $v) {
