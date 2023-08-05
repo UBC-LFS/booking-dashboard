@@ -2,19 +2,26 @@
 
 function get_bookings($query) {
 
+  require "../web/config.inc.php";
   require "../web/sites/lc/config.inc.php";
 
   // Create connection
-  $conn = mysqli_connect($db_host, $db_login, $db_password, $db_database);
-  
-  // Check connection
+  $conn = mysqli_init();
+
   if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("mysqli_init failed");
+  }
+
+  // Set SSL options
+  mysqli_ssl_set($conn, $db_options['mysql']['ssl_key'], $db_options['mysql']['ssl_cert'], $db_options['mysql']['ssl_ca'], $db_options['mysql']['ssl_capath'], NULL);
+
+  if (!mysqli_real_connect($conn, $db_host, $db_login, $db_password, $db_database)) {
+    die("Connect Error:  " . mysqli_connect_error());
   }
   
-  $result =  $conn->query($query);
+  $result =  mysqli_query($conn, $query);
 
-  $conn->close();
+  mysqli_close($conn);
 
   return $result;
 
