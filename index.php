@@ -29,6 +29,13 @@ include 'include/queries.php'
 <div class="col-md-8 offset-md-2">
 
 <?php
+  $result = get_bookings($pending_q);
+  $row = $result->fetch_assoc();
+
+  print "<b>Pending:</b>, there are $row['count(*)'] requests for review";
+?>
+
+<?php
 foreach($query as $k => $v) {
   print "<h2>$k</h2>"; 
   $result = get_bookings($v);
