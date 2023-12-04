@@ -31,9 +31,9 @@ include 'include/queries.php'
 <?php
   $result = get_bookings($pending_q);
   $row = $result->fetch_assoc();
-
-  print "<b>Pending:</b>, there are $row['count(*)'] requests for review";
 ?>
+  <p>
+  <b>Pending:</b>, there are <?php echo $row['cnt']; ?> requests for review";
 
 <?php
 foreach($query as $k => $v) {

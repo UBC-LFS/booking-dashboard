@@ -7,7 +7,7 @@ $query = array (
 );
 
 $pending_q = array (
-  "Pending" => "SELECT COUNT(*) FROM mrbs_entry WHERE status='2';"
+  "Pending" => "SELECT COUNT(*) AS cnt FROM mrbs_entry WHERE status='2';"
 );
 
 ?>
