@@ -32,11 +32,14 @@ include 'include/queries.php'
   $result = get_bookings($pending_q);
   $row = $result->fetch_assoc();
 ?>
-    <h2>Pending:</h2> There are <a href="../web/pending.php"><?php echo $row['cnt']; ?></a> requests for review.
+
+<div>
+  <h2>Pending:</h2> There are <a href="../web/pending.php"><?php echo $row['cnt']; ?></a> requests for review.
+</div>
 
 <?php
 foreach($query as $k => $v) {
-  print "<h2>$k</h2>"; 
+  print "<div><h2>$k</h2>"; 
   $result = get_bookings($v);
 
   if ($result->num_rows > 0) {
@@ -97,6 +100,7 @@ foreach($query as $k => $v) {
 }
 ?>
 
+</div>
 </div>
 </div>
 </body>
