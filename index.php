@@ -32,8 +32,7 @@ include 'include/queries.php'
   $result = get_bookings($pending_q);
   $row = $result->fetch_assoc();
 ?>
-  <p>
-  <b>Pending:</b>, there are <?php echo $row['cnt']; ?> requests for review";
+    <h2>Pending:</h2> There are <a href="../web/pending.php"><?php echo $row['cnt']; ?></a> requests for review.
 
 <?php
 foreach($query as $k => $v) {
