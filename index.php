@@ -26,19 +26,26 @@ include 'include/queries.php'
     </div>
 </nav>
 
-<div class="row">
-<div class="col-md-8 offset-md-2">
 
 <?php
   $result = get_bookings($pending_q);
   $row = $result->fetch_assoc();
 ?>
 
+<div class="row">
+<div class="col-md-8 offset-md-2">
   <h2>Pending:</h2> There are <a href="../web/pending.php"><?php echo $row['cnt']; ?></a> requests for review.
-  <br>
+</div>
+</div>
 
 <?php
 foreach($query as $k => $v) {
+?>
+
+<div class="row">
+<div class="col-md-8 offset-md-2">
+
+<?php
   print "<h2>$k</h2>"; 
   $result = get_bookings($v);
 
@@ -97,12 +104,14 @@ foreach($query as $k => $v) {
       echo "<p>There are no bookings.";
   
   }
+?>
+ 
+</div>
+</div>
 
-  echo "<br>";
-}
+<?php
+}  // end foreach
 ?>
 
-</div>
-</div>
 </body>
 </html>
