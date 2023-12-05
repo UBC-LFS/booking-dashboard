@@ -8,9 +8,6 @@ function get_bookings($query) {
   // Create connection
   $conn = mysqli_connect($db_host, $db_login, $db_password, $db_database);
 
-  // Check connection
-  $conn = mysqli_init();
-
   if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
