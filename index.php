@@ -9,6 +9,7 @@ include 'include/queries.php'
     <title>Booking Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="300">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -33,13 +34,12 @@ include 'include/queries.php'
   $row = $result->fetch_assoc();
 ?>
 
-<div>
   <h2>Pending:</h2> There are <a href="../web/pending.php"><?php echo $row['cnt']; ?></a> requests for review.
-</div>
+  <br>
 
 <?php
 foreach($query as $k => $v) {
-  print "<div><h2>$k</h2>"; 
+  print "<h2>$k</h2>"; 
   $result = get_bookings($v);
 
   if ($result->num_rows > 0) {
@@ -97,10 +97,11 @@ foreach($query as $k => $v) {
       echo "<p>There are no bookings.";
   
   }
+
+  echo "<br>";
 }
 ?>
 
-</div>
 </div>
 </div>
 </body>
