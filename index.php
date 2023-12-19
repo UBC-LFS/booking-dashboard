@@ -32,7 +32,7 @@ include 'include/queries.php'
   $row = $result->fetch_assoc();
 ?>
 
-<div class="row">
+<div class="pt-1">
 <div class="col-md-8 offset-md-2">
   <h2>Pending:</h2> There are <a href="../web/pending.php"><?php echo $row['cnt']; ?></a> requests for review.
 </div>
@@ -42,7 +42,7 @@ include 'include/queries.php'
 foreach($query as $k => $v) {
 ?>
 
-<div class="row">
+<div class="pt-1">
 <div class="col-md-8 offset-md-2">
 
 <?php
