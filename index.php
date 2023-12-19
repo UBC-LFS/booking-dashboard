@@ -34,7 +34,8 @@ include 'include/queries.php'
 
 <div class="pt-1">
 <div class="col-md-8 offset-md-2">
-  <h2>Pending:</h2> There are <a href="../web/pending.php"><?php echo $row['cnt']; ?></a> requests for review.
+  <h2>Pending:</h2>
+  <p>There are <a href="../web/pending.php"><?php echo $row['cnt']; ?></a> requests for review.
 </div>
 </div>
 
@@ -56,15 +57,6 @@ foreach($query as $k => $v) {
     <thead>
     <tr>
     <th scope='col'>Date/Time</th>
-
-<?php
-    if ($k == "Checked Out") {
-?>
-      <th scope='col'>Return Date</th>
-<?php
-    };
-?>
-
     <th scope='col'>Item</th>
     <th scope='col'>Notes</th>
     <th scope='col'>Email</th>
@@ -79,13 +71,6 @@ foreach($query as $k => $v) {
   
       <tr>
       <td><?php echo $row['date_time']; ?></td>
-<?php
-    if ($k == "Checked Out") {
-?>
-      <td scope='col'><?php echo $row['check_in']; ?></td>
-<?php
-    };
-?>
       <td><?php echo $row['room_name']; ?></td>
       <td><?php echo $row['name']; ?></td>
       <td><?php echo $row['user_email']; ?></td>
