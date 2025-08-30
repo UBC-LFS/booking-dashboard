@@ -14,7 +14,7 @@ function get_bookings($query) {
   }
 
   // Set SSL options
-  mysqli_ssl_set($conn, NULL, NULL, $db_options['mysql']['ssl_ca'], $db_options['mysql']['ssl_capath'], NULL);
+  mysqli_ssl_set($conn, NULL, NULL, $db_options['mysql']['ssl_ca'], NULL, NULL);
 
   if (!mysqli_real_connect($conn, $db_host, $db_login, $db_password, $db_database)) {
     die("Connect Error:  " . mysqli_connect_error());
